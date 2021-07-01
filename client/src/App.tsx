@@ -1,7 +1,7 @@
 import React, { Fragment, useContext } from "react";
 import "./App.css";
 import { Button } from "@material-ui/core";
-import { ThemeContext } from "./ThemeProvider";
+import { ThemeContext } from "./template_components/ThemeProvider";
 
 const App: React.FC = () => {
   const setThemeName = useContext(ThemeContext);
