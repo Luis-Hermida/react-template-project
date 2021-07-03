@@ -1,7 +1,7 @@
 import { useState, FC, createContext } from "react";
 import { MuiThemeProvider } from "@material-ui/core";
 import { unstable_createMuiStrictModeTheme } from "@material-ui/core/styles";
-import { themeCreator } from "../themes/base";
+import { themeCreator } from "./themes/base";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
 export const ThemeContext = createContext((themeName: string): void => {});
