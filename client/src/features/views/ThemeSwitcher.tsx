@@ -7,21 +7,21 @@ function ThemeSwitcher() {
 
   return (
     <div>
+      <h1>Theme Switcher</h1>
       <Button
         variant="contained"
         color="primary"
         onClick={() => setThemeName("lightTheme")}
       >
-        Set Light Theme
+        Light
       </Button>
       <Button
         variant="contained"
         color="secondary"
         onClick={() => setThemeName("darkTheme")}
       >
-        Set Dark Theme
+        Dark
       </Button>
-      <h1>Hola</h1>
     </div>
   );
 }

@@ -1,7 +1,9 @@
+import React from "react";
+
 function ToastExample() {
   return (
     <div>
-      <h1>Test</h1>
+      <h1>Toast Example</h1>
     </div>
   );
 }

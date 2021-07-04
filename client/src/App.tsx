@@ -1,5 +1,5 @@
 import { Fragment, useState, FC, useContext } from "react";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Link } from "react-router-dom";
 import AppBar from "@material-ui/core/AppBar";
 import Drawer from "@material-ui/core/Drawer";
 import Hidden from "@material-ui/core/Hidden";
@@ -8,6 +8,11 @@ import MenuIcon from "@material-ui/icons/Menu";
 import { makeStyles } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core";
 import { ThemeContext } from "./features/ThemeProvider";
+import Router from "./features/Router";
+import { useTheme } from "@material-ui/core/styles";
+import { routes } from "./features/Routes";
+
+import "./App.css";
 
 const drawerWidth = "240px";
 const useStyles = makeStyles((theme) => ({
@@ -64,6 +69,8 @@ const App: FC = (props: any) => {
   const setThemeName = useContext(ThemeContext);
   const { window } = props;
   const classes = useStyles();
+  const theme = useTheme();
+  console.log(1, theme);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -71,7 +78,24 @@ const App: FC = (props: any) => {
 
   const drawer = (
     <Fragment>
-      <h1>Hola</h1>
+      <Link
+        style={{ color: theme.palette.text.primary }}
+        to={routes.themeSwitcher}
+      >
+        Theme Switcher
+      </Link>
+      <Link
+        style={{ color: theme.palette.text.primary }}
+        to={routes.toastExample}
+      >
+        Toast Example
+      </Link>
+      <Link
+        style={{ color: theme.palette.text.primary }}
+        to={routes.reduxExample}
+      >
+        Redux Example
+      </Link>
     </Fragment>
   );
 
@@ -100,14 +124,14 @@ const App: FC = (props: any) => {
               color="primary"
               onClick={() => setThemeName("lightTheme")}
             >
-              Set Light Theme
+              Light
             </Button>
             <Button
               variant="contained"
               color="secondary"
               onClick={() => setThemeName("darkTheme")}
             >
-              Set Dark Theme
+              Dark
             </Button>
           </div>
         </AppBar>
@@ -141,7 +165,9 @@ const App: FC = (props: any) => {
             </Drawer>
           </Hidden>
         </nav>
-        <main className={classes.content}>Hola</main>
+        <main className={classes.content}>
+          <Router />
+        </main>
       </div>
     </BrowserRouter>
   );
