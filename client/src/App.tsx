@@ -1,58 +1,58 @@
-import { Fragment, useState, FC, useContext } from "react";
-import { BrowserRouter, Link } from "react-router-dom";
-import AppBar from "@material-ui/core/AppBar";
-import Drawer from "@material-ui/core/Drawer";
-import Hidden from "@material-ui/core/Hidden";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
-import { makeStyles } from "@material-ui/core/styles";
-import { Button } from "@material-ui/core";
-import { ThemeContext } from "./features/ThemeProvider";
-import Router from "./features/Router";
-import { useTheme } from "@material-ui/core/styles";
-import { routes } from "./features/Routes";
+import { Fragment, useState, FC, useContext } from 'react';
+import { BrowserRouter, Link } from 'react-router-dom';
+import AppBar from '@material-ui/core/AppBar';
+import Drawer from '@material-ui/core/Drawer';
+import Hidden from '@material-ui/core/Hidden';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import { makeStyles } from '@material-ui/core/styles';
+import { Button } from '@material-ui/core';
+import { ThemeContext } from './features/ThemeProvider';
+import Router from './features/Router';
+import { useTheme } from '@material-ui/core/styles';
+import { routes } from './features/Routes';
 
-import "./App.css";
+import './App.css';
 
-const drawerWidth = "240px";
+const drawerWidth = '240px';
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: "flex",
+    display: 'flex',
   },
   drawer: {
-    [theme.breakpoints.up("md")]: {
+    [theme.breakpoints.up('md')]: {
       width: drawerWidth,
       flexShrink: 0,
     },
   },
   appBar: {
     height: 64,
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    [theme.breakpoints.up("md")]: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    [theme.breakpoints.up('md')]: {
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
     },
   },
   section: {
     padding: 8,
-    [theme.breakpoints.up("md")]: {
+    [theme.breakpoints.up('md')]: {
       marginLeft: drawerWidth,
     },
   },
   menuButton: {
     marginRight: theme.spacing(2),
-    [theme.breakpoints.up("md")]: {
-      display: "none",
+    [theme.breakpoints.up('md')]: {
+      display: 'none',
     },
   },
   headerSection: {
     marginLeft: 24,
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   drawerPaper: {
     width: drawerWidth,
@@ -70,7 +70,6 @@ const App: FC = (props: any) => {
   const { window } = props;
   const classes = useStyles();
   const theme = useTheme();
-  console.log(1, theme);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -78,29 +77,19 @@ const App: FC = (props: any) => {
 
   const drawer = (
     <Fragment>
-      <Link
-        style={{ color: theme.palette.text.primary }}
-        to={routes.themeSwitcher}
-      >
+      <Link style={{ color: theme.palette.text.primary }} to={routes.themeSwitcher}>
         Theme Switcher
       </Link>
-      <Link
-        style={{ color: theme.palette.text.primary }}
-        to={routes.toastExample}
-      >
+      <Link style={{ color: theme.palette.text.primary }} to={routes.toastExample}>
         Toast Example
       </Link>
-      <Link
-        style={{ color: theme.palette.text.primary }}
-        to={routes.reduxExample}
-      >
+      <Link style={{ color: theme.palette.text.primary }} to={routes.reduxExample}>
         Redux Example
       </Link>
     </Fragment>
   );
 
-  const container =
-    window !== undefined ? () => window().document.body : undefined;
+  const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
     <BrowserRouter>
@@ -119,18 +108,10 @@ const App: FC = (props: any) => {
             <p className={classes.section}>React Start Project</p>
           </div>
           <div className={classes.headerSection}>
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={() => setThemeName("lightTheme")}
-            >
+            <Button variant="contained" color="primary" onClick={() => setThemeName('lightTheme')}>
               Light
             </Button>
-            <Button
-              variant="contained"
-              color="secondary"
-              onClick={() => setThemeName("darkTheme")}
-            >
+            <Button variant="contained" color="secondary" onClick={() => setThemeName('darkTheme')}>
               Dark
             </Button>
           </div>
@@ -140,7 +121,7 @@ const App: FC = (props: any) => {
             <Drawer
               container={container}
               variant="temporary"
-              anchor={"left"}
+              anchor={'left'}
               open={mobileOpen}
               onClose={handleDrawerToggle}
               classes={{

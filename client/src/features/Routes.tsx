@@ -1,12 +1,12 @@
-import { createBrowserHistory } from "history";
+import { createBrowserHistory } from 'history';
 
 const customHistory = createBrowserHistory();
 
 export const routes = Object.freeze({
-  home: "/",
-  themeSwitcher: "/features/themeSwitcher",
-  toastExample: "/features/toastExample",
-  reduxExample: "/features/reduxExample",
+  home: '/',
+  themeSwitcher: '/features/themeSwitcher',
+  toastExample: '/features/toastExample',
+  reduxExample: '/features/reduxExample',
 });
 
 export const RedirectTo = (route: string) => {
