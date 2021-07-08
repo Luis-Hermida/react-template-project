@@ -1,6 +1,6 @@
 # React Starter Template
 
-### This Starter Template is planned to work with the most common react libraries from the start or at least offer a solution for a problem and it's intended to be used with VS Code (For plugins purposes only).
+This Starter Template is planned to work with the most common react libraries from the start or at least offer a solution for a problem and it's intended to be used with VS Code (For plugins purposes only).
 
 ## Plugins
 
@@ -12,7 +12,7 @@
 - ESLint
   -- .eslintrc.js
 
-### Reconmended:
+### Recommended:
 
 - Auto Import
 - Auto Rename Tag
@@ -28,7 +28,7 @@
 - Creation of custom styles using themes
 - Passing down theme values as styles
 - Icons
-- Custom Components (Not really but have a responsive navbar on App.tsx)
+- Material UI Custom Components
   -- App.tsx
   -- ./features/themes/\*.ts
   -- ./features/ThemeProvider.tsx

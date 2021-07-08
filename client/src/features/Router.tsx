@@ -18,7 +18,7 @@ const AnimatedSwitch = withRouter(({ location }) => (
         <Route path={routes.reduxExample}>
           <ReduxStateExample />
         </Route>
-        <Route path="*" component={ThemeSwitcher} />
+        {/* <Route path="*" component={} /> */}
       </Switch>
     </CSSTransition>
   </SwitchTransition>

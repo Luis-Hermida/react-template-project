@@ -1,27 +1,47 @@
-import { useContext } from "react";
-import { ThemeContext } from "../ThemeProvider";
-import { Button } from "@material-ui/core";
+import { useContext } from 'react';
+import { ThemeContext } from '../ThemeProvider';
+import { Button } from '@material-ui/core';
+import { ThemeNames } from '../themes/base';
 
 function ThemeSwitcher() {
-  const setThemeName = useContext(ThemeContext);
+  const { themeName, setThemeName } = useContext(ThemeContext);
 
   return (
-    <div>
+    <div style={{ width: '60%' }}>
       <h1>Theme Switcher</h1>
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={() => setThemeName("lightTheme")}
-      >
-        Light
-      </Button>
-      <Button
-        variant="contained"
-        color="secondary"
-        onClick={() => setThemeName("darkTheme")}
-      >
-        Dark
-      </Button>
+      <p>
+        To create a theme first you will have to create it under the themes folder using
+        createMuiTheme and then add it to themeMap under ./themes/base.ts for the ThemeProvider to
+        know which theme to load.
+      </p>
+      <hr />
+      <div>
+        <h2>Usage of Theme Provider</h2>
+        <p>
+          You can add any numbers of themes and use ThemeProvider.tsx to change them at will. For
+          the moment we just have 2 themes.
+        </p>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => setThemeName(ThemeNames.lightTheme)}
+        >
+          Light
+        </Button>
+        <Button
+          variant="contained"
+          color="secondary"
+          onClick={() => setThemeName(ThemeNames.darkTheme)}
+        >
+          Dark
+        </Button>
+      </div>
+      <br />
+      <h2>Custom Toggler Component</h2>
+      <p>
+        The way the providers give us the theme information and the function to change them let us
+        build our own components easily.
+      </p>
     </div>
   );
 }

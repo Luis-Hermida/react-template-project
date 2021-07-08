@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: drawerWidth,
     },
   },
-  section: {
+  header: {
     padding: 8,
     [theme.breakpoints.up('md')]: {
       marginLeft: drawerWidth,
@@ -105,7 +105,7 @@ const App: FC = (props: any) => {
             >
               <MenuIcon />
             </IconButton>
-            <p className={classes.section}>React Start Project</p>
+            <p className={classes.header}>React Start Project</p>
           </div>
           <div className={classes.headerSection}>
             <Button variant="contained" color="primary" onClick={() => setThemeName('lightTheme')}>
