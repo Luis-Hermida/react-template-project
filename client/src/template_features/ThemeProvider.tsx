@@ -15,7 +15,7 @@ export const ThemeContext = createContext<ThemeContextValues | any>({
 });
 
 const ThemeProvider: FC = (props) => {
-  const [themeName, setThemeName] = useState<string>(ThemeNames.darkTheme);
+  const [themeName, setThemeName] = useState<string>(ThemeNames.lightTheme);
 
   // Retrieve the theme object by theme name
   // Material UI doesn't fully support Strict mode so for the theme toggler to work

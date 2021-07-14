@@ -2,12 +2,13 @@ import { useContext } from 'react';
 import { ThemeContext } from '../ThemeProvider';
 import { Button } from '@material-ui/core';
 import { ThemeNames } from '../themes/base';
+import ThemeToggler from '../components/ThemeToggler';
 
 function ThemeSwitcher() {
   const { themeName, setThemeName } = useContext(ThemeContext);
 
   return (
-    <div style={{ width: '60%' }}>
+    <div style={{ maxWidth: 600 }}>
       <h1>Theme Switcher</h1>
       <p>
         To create a theme first you will have to create it under the themes folder using
@@ -42,6 +43,7 @@ function ThemeSwitcher() {
         The way the providers give us the theme information and the function to change them let us
         build our own components easily.
       </p>
+      <ThemeToggler themeName={themeName} setThemeName={setThemeName} />
     </div>
   );
 }

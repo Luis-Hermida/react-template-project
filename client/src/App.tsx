@@ -7,12 +7,13 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { makeStyles } from '@material-ui/core/styles';
 import { Button } from '@material-ui/core';
-import { ThemeContext } from './features/ThemeProvider';
-import Router from './features/Router';
+import { ThemeContext } from './template_features/ThemeProvider';
+import Router from './template_features/Router';
 import { useTheme } from '@material-ui/core/styles';
-import { routes } from './features/Routes';
+import { routes } from './template_features/Routes';
 
 import './App.css';
+import ThemeToggler from './template_features/components/ThemeToggler';
 
 const drawerWidth = '240px';
 const useStyles = makeStyles((theme) => ({
@@ -66,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
 
 const App: FC = (props: any) => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const setThemeName = useContext(ThemeContext);
+  const { themeName, setThemeName } = useContext(ThemeContext);
   const { window } = props;
   const classes = useStyles();
   const theme = useTheme();
@@ -105,15 +106,9 @@ const App: FC = (props: any) => {
             >
               <MenuIcon />
             </IconButton>
-            <p className={classes.header}>React Start Project</p>
           </div>
           <div className={classes.headerSection}>
-            <Button variant="contained" color="primary" onClick={() => setThemeName('lightTheme')}>
-              Light
-            </Button>
-            <Button variant="contained" color="secondary" onClick={() => setThemeName('darkTheme')}>
-              Dark
-            </Button>
+            <ThemeToggler themeName={themeName} setThemeName={setThemeName} />
           </div>
         </AppBar>
         <nav className={classes.drawer} aria-label="mailbox folders">
