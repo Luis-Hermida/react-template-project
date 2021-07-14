@@ -1,26 +1,42 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "rootDir": "src",
+    "outDir": "build",
+    "types": ["node", "jest"],
+    "target": "es2017",
     "lib": [
       "dom",
+      "ES5",
+      "ES2015.Promise",
+      "ES2015.Collection",
+      "ES2015.Iterable",
+      "ES2015.Core",
       "dom.iterable",
       "esnext"
     ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "jsx": "react-jsx",
+    "alwaysStrict": true,
+    "charset": "utf8",
     "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
+    "importHelpers": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "noEmitHelpers": true,
+    "noImplicitUseStrict": false,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "noFallthroughCasesInSwitch": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "strict": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }

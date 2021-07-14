@@ -4,18 +4,19 @@ import { Button } from '@material-ui/core';
 import { ThemeNames } from '../themes/base';
 import ThemeToggler from '../components/ThemeToggler';
 
-function ThemeSwitcher() {
+const ThemeSwitcher = () => {
   const { themeName, setThemeName } = useContext(ThemeContext);
 
   return (
     <div style={{ maxWidth: 600 }}>
-      <h1>Theme Switcher</h1>
-      <p>
-        To create a theme first you will have to create it under the themes folder using
-        createMuiTheme and then add it to themeMap under ./themes/base.ts for the ThemeProvider to
-        know which theme to load.
-      </p>
-      <hr />
+      <div>
+        <h1>Theme Switcher</h1>
+        <p>
+          To create a theme first you will have to create it under the themes folder using
+          createMuiTheme and then add it to themeMap under ./themes/base.ts for the ThemeProvider to
+          know which theme to load.
+        </p>
+      </div>
       <div>
         <h2>Usage of Theme Provider</h2>
         <p>
@@ -37,15 +38,16 @@ function ThemeSwitcher() {
           Dark
         </Button>
       </div>
-      <br />
-      <h2>Custom Toggler Component</h2>
-      <p>
-        The way the providers give us the theme information and the function to change them let us
-        build our own components easily.
-      </p>
-      <ThemeToggler themeName={themeName} setThemeName={setThemeName} />
+      <div>
+        <h2>Custom Toggler Component</h2>
+        <p>
+          The way the providers give us the theme information and the function to change them let us
+          build our own components easily.
+        </p>
+        <ThemeToggler themeName={themeName} setThemeName={setThemeName} />
+      </div>
     </div>
   );
-}
+};
 
 export default ThemeSwitcher;

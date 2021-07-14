@@ -6,14 +6,12 @@ import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { makeStyles } from '@material-ui/core/styles';
-import { Button } from '@material-ui/core';
 import { ThemeContext } from './template_features/ThemeProvider';
 import Router from './template_features/Router';
 import { useTheme } from '@material-ui/core/styles';
 import { routes } from './template_features/Routes';
-
-import './App.css';
 import ThemeToggler from './template_features/components/ThemeToggler';
+import './App.css';
 
 const drawerWidth = '240px';
 const useStyles = makeStyles((theme) => ({
@@ -49,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   headerSection: {
-    marginLeft: 24,
+    margin: '0 24px',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',

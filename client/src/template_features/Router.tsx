@@ -24,8 +24,8 @@ const AnimatedSwitch = withRouter(({ location }) => (
   </SwitchTransition>
 ));
 
-function Router() {
+const Router = () => {
   return <AnimatedSwitch />;
-}
+};
 
 export default Router;

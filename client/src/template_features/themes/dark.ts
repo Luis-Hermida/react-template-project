@@ -4,7 +4,7 @@ export const darkTheme = createMuiTheme({
   palette: {
     type: 'dark',
     primary: {
-      main: '#333fff',
+      main: '#4167B2',
     },
   },
 });
