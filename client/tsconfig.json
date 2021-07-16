@@ -18,7 +18,6 @@
     "declarationMap": true,
     "sourceMap": true,
     "jsx": "react-jsx",
-    "alwaysStrict": true,
     "charset": "utf8",
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
@@ -34,7 +33,7 @@
     "allowSyntheticDefaultImports": true,
     "noFallthroughCasesInSwitch": true,
     "noEmit": true,
-    "strict": true,
+    "strict": false,
     "noUnusedLocals": false,
     "noUnusedParameters": false
   },

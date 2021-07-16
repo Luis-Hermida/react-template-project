@@ -4,13 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ThemeProvider from './template_features/ThemeProvider';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 ReactDOM.render(
-  <ThemeProvider>
-    <React.StrictMode>
+  <React.StrictMode>
+    <ThemeProvider>
+      <ToastContainer />
       <App />
-    </React.StrictMode>
-  </ThemeProvider>,
+    </ThemeProvider>
+  </React.StrictMode>,
   document.getElementById('root')
 );
 
