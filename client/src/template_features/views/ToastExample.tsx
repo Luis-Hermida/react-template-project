@@ -75,8 +75,9 @@ const ToastExample = () => {
           lightweight and easy to use library that let's us configure our toaster the way we want.
         </p>
         <p>
-          For custom styles you will have to overwrite 'react-toastify/dist/ReactToastify.css' with
-          'toast_styles.css' in the 'index.tsx'
+          For custom styles you will have to overwrite{' '}
+          <code>react-toastify/dist/ReactToastify.css</code> with <code>toast_styles.css</code> in
+          the <code>index.tsx</code>.
         </p>
 
         <FormControl style={{ width: 200 }}>
@@ -117,7 +118,8 @@ const ToastExample = () => {
         <h2>Custom Toast Theme Component</h2>
         <p>
           Toastify is very user configurable so that will let us create our on Toast messages for
-          this component we are only using ThemeProvider to "change" the default behavior.
+          this component we are only using <code>ThemeProvider.tsx</code> to "change" the default
+          behavior.
         </p>
         <ThemeToastDefault />
       </div>

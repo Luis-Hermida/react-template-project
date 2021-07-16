@@ -12,16 +12,16 @@ const ThemeSwitcher: FC = () => {
       <div>
         <h1>Theme Switcher</h1>
         <p>
-          To create a theme first you will have to create it under the themes folder using
-          createMuiTheme and then add it to themeMap under ./themes/base.ts for the ThemeProvider to
-          know which theme to load.
+          To create a theme first you will have to create it under the themes folder using{' '}
+          <code>createMuiTheme</code> and then add it to themeMap under{' '}
+          <code>./themes/base.ts</code> for the ThemeProvider to know which theme to load.
         </p>
       </div>
       <div>
         <h2>Usage of Theme Provider</h2>
         <p>
-          You can add any numbers of themes and use ThemeProvider.tsx to change them at will. For
-          the moment we just have 2 themes.
+          You can add any numbers of themes and use <code>ThemeProvider.tsx</code> to change them at
+          will. For the moment we just have 2 themes.
         </p>
         <Button
           variant="contained"

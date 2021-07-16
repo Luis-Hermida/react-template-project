@@ -16,3 +16,12 @@
   opacity: 1;
   transition: opacity 400ms ease-in;
 }
+
+/* Styles */
+code {
+  background-color: rgba(140, 140, 140, 0.2);
+  border-radius: 2px;
+  padding: 2px 4px;
+  font-size: 0.85rem;
+  font-family: 'Courier New', Courier, monospace;
+}
