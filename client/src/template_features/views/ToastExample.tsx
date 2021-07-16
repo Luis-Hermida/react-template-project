@@ -1,6 +1,7 @@
 import { ChangeEvent, SyntheticEvent, useState } from 'react';
 import { toast, ToastOptions, ToastPosition, TypeOptions } from 'react-toastify';
 import { Button, FormControl, InputLabel, MenuItem, Select } from '@material-ui/core';
+import ThemeToastDefault from '../components/ThemeToastDefault';
 
 const ToastExample = () => {
   const [position, setPosition] = useState<ToastPosition>('bottom-center');
@@ -77,40 +78,48 @@ const ToastExample = () => {
           For custom styles you will have to overwrite 'react-toastify/dist/ReactToastify.css' with
           'toast_styles.css' in the 'index.tsx'
         </p>
+
+        <FormControl style={{ width: 200 }}>
+          <InputLabel>Position</InputLabel>
+          <Select value={position} onChange={(e: any) => handlePositionChange(e)}>
+            <MenuItem value="top-left">top-left</MenuItem>
+            <MenuItem value="top-center">top-center</MenuItem>
+            <MenuItem value="top-right">top-right</MenuItem>
+            <MenuItem value="bottom-left">bottom-left</MenuItem>
+            <MenuItem value="bottom-center">bottom-center</MenuItem>
+            <MenuItem value="bottom-right">bottom-right</MenuItem>
+          </Select>
+        </FormControl>
+
+        <FormControl style={{ width: 200, marginLeft: 20 }}>
+          <InputLabel>Type</InputLabel>
+          <Select value={type} onChange={(e: any) => handleTypeChange(e)}>
+            <MenuItem value="info">info</MenuItem>
+            <MenuItem value="success">success</MenuItem>
+            <MenuItem value="warning">warning</MenuItem>
+            <MenuItem value="error">error</MenuItem>
+            <MenuItem value="default">default</MenuItem>
+          </Select>
+        </FormControl>
+        <div style={{ marginTop: 20 }}>
+          <Button
+            variant="contained"
+            onClick={() => {
+              notify(type);
+            }}
+            color="primary"
+          >
+            Notify
+          </Button>
+        </div>
       </div>
-
-      <FormControl style={{ width: 200 }}>
-        <InputLabel>Position</InputLabel>
-        <Select value={position} onChange={(e: any) => handlePositionChange(e)}>
-          <MenuItem value="top-left">top-left</MenuItem>
-          <MenuItem value="top-center">top-center</MenuItem>
-          <MenuItem value="top-right">top-right</MenuItem>
-          <MenuItem value="bottom-left">bottom-left</MenuItem>
-          <MenuItem value="bottom-center">bottom-center</MenuItem>
-          <MenuItem value="bottom-right">bottom-right</MenuItem>
-        </Select>
-      </FormControl>
-
-      <FormControl style={{ width: 200, marginLeft: 20 }}>
-        <InputLabel>Type</InputLabel>
-        <Select value={type} onChange={(e: any) => handleTypeChange(e)}>
-          <MenuItem value="info">info</MenuItem>
-          <MenuItem value="success">success</MenuItem>
-          <MenuItem value="warning">warning</MenuItem>
-          <MenuItem value="error">error</MenuItem>
-          <MenuItem value="default">default</MenuItem>
-        </Select>
-      </FormControl>
-      <div style={{ marginTop: 20 }}>
-        <Button
-          variant="contained"
-          onClick={() => {
-            notify(type);
-          }}
-          color="primary"
-        >
-          Notify
-        </Button>
+      <div>
+        <h2>Custom Toast Theme Component</h2>
+        <p>
+          Toastify is very user configurable so that will let us create our on Toast messages for
+          this component we are only using ThemeProvider to "change" the default behavior.
+        </p>
+        <ThemeToastDefault />
       </div>
     </div>
   );

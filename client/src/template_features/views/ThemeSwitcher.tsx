@@ -1,10 +1,10 @@
-import { useContext } from 'react';
+import { useContext, FC } from 'react';
 import { ThemeContext } from '../ThemeProvider';
 import { Button } from '@material-ui/core';
 import { ThemeNames } from '../themes/base';
 import ThemeToggler from '../components/ThemeToggler';
 
-const ThemeSwitcher = () => {
+const ThemeSwitcher: FC = () => {
   const { themeName, setThemeName } = useContext(ThemeContext);
 
   return (
