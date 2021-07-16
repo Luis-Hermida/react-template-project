@@ -10,10 +10,10 @@ const ThemeToastDefault: FC = () => {
   const notify = () => {
     switch (themeName) {
       case ThemeNames.lightTheme:
-        toast('Theme Toast', {});
+        toast('Theme Toast', { position: 'bottom-right' });
         break;
       case ThemeNames.darkTheme:
-        toast.dark('Theme Toast', {});
+        toast.dark('Theme Toast', { position: 'bottom-right' });
         break;
       default:
         break;

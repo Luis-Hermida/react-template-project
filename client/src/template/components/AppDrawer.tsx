@@ -8,9 +8,9 @@ import MenuIcon from '@material-ui/icons/Menu';
 import { makeStyles } from '@material-ui/core/styles';
 import { useTheme } from '@material-ui/core/styles';
 import ThemeToggler from './ThemeToggler';
-import Router from '../Router';
+import Router from './Router';
 import { ThemeContext } from '../ThemeProvider';
-import { routes } from '../Routes';
+import { routes } from '../../Routes';
 
 const drawerWidth = '240px';
 const useStyles = makeStyles((theme) => ({
@@ -64,7 +64,6 @@ const useStyles = makeStyles((theme) => ({
 
 const App: FC = (props: any) => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const { themeName, setThemeName } = useContext(ThemeContext);
   const { window } = props;
   const classes = useStyles();
   const theme = useTheme();
@@ -105,7 +104,7 @@ const App: FC = (props: any) => {
             </IconButton>
           </div>
           <div className={classes.headerSection}>
-            <ThemeToggler themeName={themeName} setThemeName={setThemeName} />
+            <ThemeToggler />
           </div>
         </AppBar>
         <nav className={classes.drawer} aria-label="mailbox folders">

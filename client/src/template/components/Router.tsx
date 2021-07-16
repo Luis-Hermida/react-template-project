@@ -1,9 +1,9 @@
 import { Switch, Route, withRouter } from 'react-router-dom';
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
-import ReduxStateExample from './views/ReduxStateExample';
-import ThemeSwitcher from './views/ThemeSwitcher';
-import ToastExample from './views/ToastExample';
-import { routes } from './Routes';
+import ReduxStateExample from '../views/ReduxStateExample';
+import ThemeSwitcher from '../views/ThemeSwitcherExample';
+import ToastExample from '../views/ToastExample';
+import { routes } from '../../Routes';
 
 const AnimatedSwitch = withRouter(({ location }) => (
   <SwitchTransition mode={'out-in'}>

@@ -1,5 +1,5 @@
 import { Fragment, FC } from 'react';
-import AppDrawer from './template_features/components/AppDrawer';
+import AppDrawer from './template/components/AppDrawer';
 import './App.css';
 
 const App: FC = () => {

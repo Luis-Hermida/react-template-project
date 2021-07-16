@@ -44,7 +44,7 @@ const ThemeSwitcher: FC = () => {
           The way the providers give us the theme information and the function to change them let us
           build our own components easily.
         </p>
-        <ThemeToggler themeName={themeName} setThemeName={setThemeName} />
+        <ThemeToggler />
       </div>
     </div>
   );

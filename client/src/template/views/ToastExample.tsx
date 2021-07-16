@@ -1,7 +1,7 @@
 import { ChangeEvent, SyntheticEvent, useState } from 'react';
 import { toast, ToastOptions, ToastPosition, TypeOptions } from 'react-toastify';
 import { Button, FormControl, InputLabel, MenuItem, Select } from '@material-ui/core';
-import ThemeToastDefault from '../components/ThemeToastDefault';
+import ThemeToastDefault from '../components/ToastByTheme';
 
 const ToastExample = () => {
   const [position, setPosition] = useState<ToastPosition>('bottom-center');
