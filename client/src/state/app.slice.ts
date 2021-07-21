@@ -1,4 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { thunk } from './action-utils';
+
 import { AppError } from './common/types';
 
 export interface AppState {
@@ -6,6 +8,7 @@ export interface AppState {
   isError: boolean;
   errorCode?: string;
   errorMessage?: string;
+  testApi?: any;
 }
 
 export const initialState: AppState = {
