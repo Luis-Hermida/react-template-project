@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
 import ReduxStateExample from '../views/ReduxStateExample';
@@ -24,7 +25,7 @@ const AnimatedSwitch = withRouter(({ location }) => (
   </SwitchTransition>
 ));
 
-const Router = () => {
+const Router: FC = () => {
   return <AnimatedSwitch />;
 };
 

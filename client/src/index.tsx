@@ -5,12 +5,16 @@ import reportWebVitals from './reportWebVitals';
 import ThemeProvider from './template/ThemeProvider';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Provider } from 'react-redux';
+import store from './reducer/store';
 
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider>
-      <ToastContainer />
-      <App />
+      <Provider store={store}>
+        <ToastContainer />
+        <App />
+      </Provider>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
