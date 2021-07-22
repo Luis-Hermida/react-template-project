@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
-import ReduxStateExample from '../views/ReduxStateExample';
 import ThemeSwitcher from '../views/ThemeSwitcherExample';
 import ToastExample from '../views/ToastExample';
+import ReduxStateExampleContainer from '../views/ReduxStateExampleContainer';
 import { routes } from '../../Routes';
 
 const AnimatedSwitch = withRouter(({ location }) => (
@@ -17,7 +17,7 @@ const AnimatedSwitch = withRouter(({ location }) => (
           <ToastExample />
         </Route>
         <Route path={routes.reduxExample}>
-          <ReduxStateExample />
+          <ReduxStateExampleContainer />
         </Route>
         {/* <Route path="*" component={} /> */}
       </Switch>

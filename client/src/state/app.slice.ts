@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { thunk } from './action-utils';
+import * as api from '../api/main';
 
 import { AppError } from './common/types';
 
@@ -15,6 +16,14 @@ export const initialState: AppState = {
   isLoading: false,
   isError: false,
 };
+
+export const getTestApiData = (name: string, request = thunk) =>
+  request({
+    requested: () => getTestApiRequested(),
+    execute: (_state, service = api) => service.getTestApi(name),
+    succeeded: (data) => getTestApiSuccess(data),
+    next: (data, _state) => getTestApiNext(data),
+  });
 
 const appSlice = createSlice({
   name: 'app',
@@ -33,10 +42,28 @@ const appSlice = createSlice({
       state.errorCode = undefined;
       state.errorMessage = undefined;
     },
+    getTestApiRequested() {
+      // eslint-disable-next-line no-console
+      console.log('Request');
+    },
+    getTestApiSuccess(state, action: any) {
+      state.testApi = action.payload;
+    },
+    getTestApiNext(_state, action: any) {
+      // eslint-disable-next-line no-console
+      console.log('Next', action.payload);
+    },
   },
 });
 
-export const { appLoading, appError, dismissError } = appSlice.actions;
+export const {
+  appLoading,
+  appError,
+  dismissError,
+  getTestApiRequested,
+  getTestApiSuccess,
+  getTestApiNext,
+} = appSlice.actions;
 
 const appReducer = appSlice.reducer;
 export default appReducer;

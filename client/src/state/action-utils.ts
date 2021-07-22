@@ -35,7 +35,7 @@ export const thunk = (options: Options) => {
       }
       const state = getState();
       const result: any = await options.execute(state);
-      if (result.ok) {
+      if (result.status == 200) {
         dispatch(request.succeeded(result.data, state));
         if (options.next) {
           dispatch(options.next(result.data, state));

@@ -1,5 +1,5 @@
-import { ChangeEvent, SyntheticEvent, useState } from 'react';
-import { toast, ToastOptions, ToastPosition, TypeOptions } from 'react-toastify';
+import { ChangeEvent, useState } from 'react';
+import { toast, ToastPosition, TypeOptions } from 'react-toastify';
 import { Button, FormControl, InputLabel, MenuItem, Select } from '@material-ui/core';
 import ThemeToastDefault from '../components/ToastByTheme';
 

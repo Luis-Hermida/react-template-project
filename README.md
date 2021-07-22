@@ -49,3 +49,10 @@ This Starter Template is planned to work with the most common react libraries fr
 - React Toastify usage:
   - ./template_features/components/ThemeToastDefault.tsx
   - ./template_features/views/ToastExample.tsx
+
+## Redux - Thunk
+
+- Creation of slices.
+- App state.
+- Handling Async code with Thunk.
+  - ./state/\*
